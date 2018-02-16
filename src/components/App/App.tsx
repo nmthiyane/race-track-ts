@@ -18,7 +18,7 @@ export class App extends React.Component<Props, State> {
 			<div className="App" >
 				<header className="App-header" >
 					<img src={require('../../images/logo.svg')} className="App-logo" alt="logo" />
-					<h1 className="App-title" > Welcome to React </h1>
+					<h1 className="App-title" > Welcome to React with Typescript </h1>
 					<h2 className="App-sub-title" > Kurtosys Grads </h2>
 				</header>
 				<p className="App-intro" >
