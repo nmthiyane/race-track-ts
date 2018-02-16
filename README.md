@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-It also used the following repo to enable [Typescript](https://github.com/wmonk/create-react-app-typescript).
+And uses the following repo to enable [Typescript](https://github.com/wmonk/create-react-app-typescript).
 
 ## Folder Structure
 
 ```
-my-app/
+my-app-ts/
   README.md
   node_modules/
   package.json
