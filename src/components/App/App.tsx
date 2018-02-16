@@ -2,11 +2,11 @@ import * as React from 'react';
 import './App.css';
 
 interface Props {
-
+	samplePropProp?: string;
 }
 
 interface State {
-
+	sampleStateProp?: string;
 }
 
 export class App extends React.Component<Props, State> {
