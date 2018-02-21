@@ -1,0 +1,29 @@
+.HorseDiv{
+    position: relative;
+    text-align: left;
+    padding: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.HorseDiv h4{
+    bottom: 10px;
+}
+
+.HorseDiv progress{
+    position: relative;
+    height: 60px;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    width: 90% ;
+    color: blueviolet; 
+    margin: auto;
+    padding-bottom: 20px;
+    padding-left: 30px;
+}
+
+.HorseDiv img{
+    height: 60px;
+    width: 60px;
+    padding-top: 0px;
+}

@@ -1,0 +1,44 @@
+.menu-text{
+    display: block;
+    border: 2px solid #014373;
+    padding: 10px;
+    margin: -5px;
+    height: 100px;
+}
+
+.StartButton, .ResetButton{
+    cursor: pointer
+
+}
+
+.TimerDiv h2{
+    position: relative;
+    left: 400px;
+    float: left;
+}
+
+input{
+    position: relative ;
+    bottom: 130px;
+    height: 30px;
+    text-align: center;
+}
+
+.main-menu img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    top: -70px;
+}
+
+.menu-text p {
+    position: relative;
+    right: 320px;
+    top: 42px;
+}
+
+.main-menu {
+    height: 200px;
+    width: 100%;
+
+}

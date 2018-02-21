@@ -4,18 +4,29 @@ h1, h2 {
 
 .App {
   text-align: center;
+  display: block;
+  background-color: #9bbcd3;
+  height: 1310px;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  float: left;
+  animation: App-logo-spin infinite 0.2s linear;
   height: 80px;
 }
 
 .App-header {
   background-color: #014373;
-  height: 160px;
+  height: 80px;
   padding: 20px;
   color: white;
+}
+
+.Components{
+  text-align: center;
+  display: block;
+  min-width: 1500px;
+  padding: 0px 1% 0px 1%;
 }
 
 .App-title {
@@ -33,6 +44,6 @@ h1, h2 {
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(5deg); }
 }

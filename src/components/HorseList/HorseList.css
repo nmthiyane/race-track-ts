@@ -1,0 +1,14 @@
+.Winner-div{
+    top: 30px;
+    position: relative;
+    padding-bottom: 50px;
+ }
+ 
+.Winner-div label {
+    padding-left: 350px;
+    text-align: center;
+}
+
+.ListDiv{
+    align-content: left;
+}
