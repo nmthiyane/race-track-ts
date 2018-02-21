@@ -21,7 +21,8 @@ export class Menus extends React.Component<Props, State>{
         this.handleResetGame = this.handleResetGame.bind(this);
     }
 
-    handleText(event: KeyboardEvent){
+    // change from any tp proper thing
+    handleText(event: any){
         const value = event.target.value;
         //Pass noOfHorses to parent
         if(value === ""){
@@ -50,12 +51,12 @@ export class Menus extends React.Component<Props, State>{
             <div className = 'main-menu'>
                 <div className = 'menu-text'>
                     <p> Enter No. of horses </p>
-                    <input 
+                    {/* <input 
                         type = 'text' 
                         maxLength="10"
                         onChange = {this.handleText}
                         placeholder = "2=< horses =<9" required
-                    />
+                    /> */}
                     <img className = 'StartButton'
                         src = {start_icon}
                         alt = 'Start icon'
