@@ -7,16 +7,19 @@ import * as React from 'react';
 const Horse = require('../Horse');
 import './HorseList.css';
 
+//This interface contains the properties of the horse object
+interface horseDetails {
+    name: string;
+    avatarUrl: string;
+}
 
 interface Props {
     startGame: boolean;
-    allHorses: string[];
-
+    allHorses: horseDetails[];
 }
 
 interface State {
     horsesArray: string[];
-
 }
 
 export class HorseList extends React.Component<Props, State>{
@@ -60,7 +63,7 @@ export class HorseList extends React.Component<Props, State>{
                     </label>
                 </div>                
                 <div className = 'ListDiv'>
-                    {this.props.allHorses.map( (horse: {avatarUrl: string, username: string}, key: number) => 
+                    {this.props.allHorses.map( (horse: horseDetails, key: number) => 
                         <Horse 
                           avatarUrl = {horse['avatarUrl']}
                           username = {horse['name']}

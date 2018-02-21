@@ -7,8 +7,8 @@ import * as React from 'react';
 import './Horse.css';
 
 interface Props {
-    startGame?: boolean;
-    addFinishedHorse?: any;  //to solve later
+    startGame: boolean;
+    addFinishedHorse: Function;
     avatarUrl: string;
     username: string;
 }

@@ -4,13 +4,13 @@ const start_icon  = require('../../images/start_icon.png');
 const reset_icon = require('../../images/reset_icon.png');
 
 interface Props {
-	samplePropProp?: string;
+    onPopulate: Function;
+    onStart: Function;
 }
 
 interface State {
-	sampleStateProp?: string;
+    sampleStateProp?: string; 
 }
-
 
 export class Menus extends React.Component<Props, State>{
     constructor(props: Props){
@@ -21,7 +21,7 @@ export class Menus extends React.Component<Props, State>{
         this.handleResetGame = this.handleResetGame.bind(this);
     }
 
-    handleText(event){
+    handleText(event: KeyboardEvent){
         const value = event.target.value;
         //Pass noOfHorses to parent
         if(value === ""){
@@ -43,7 +43,6 @@ export class Menus extends React.Component<Props, State>{
     handleResetGame(){
         this.props.onStart(false);
         this.props.onPopulate(2);
- 
     }
     
     render(){
@@ -52,7 +51,7 @@ export class Menus extends React.Component<Props, State>{
                 <div className = 'menu-text'>
                     <p> Enter No. of horses </p>
                     <input 
-                        type='text' 
+                        type = 'text' 
                         maxLength="10"
                         onChange = {this.handleText}
                         placeholder = "2=< horses =<9" required
