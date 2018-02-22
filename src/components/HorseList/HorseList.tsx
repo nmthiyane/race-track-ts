@@ -7,70 +7,71 @@ import * as React from 'react';
 const Horse = require('../Horse');
 import './HorseList.css';
 
-//This interface contains the properties of the horse object
-interface horseDetails {
+// This interface contains the properties of the horse object
+interface HorseDetails {
     name: string;
     avatarUrl: string;
 }
 
 interface Props {
     startGame: boolean;
-    allHorses: horseDetails[];
+    allHorses: HorseDetails[];
 }
 
 interface State {
     horsesArray: string[];
 }
 
-export class HorseList extends React.Component<Props, State>{
+export class HorseList extends React.Component<Props, State> {
 
-    constructor(props: Props){
+    constructor(props: Props) {
         super(props);
 
-        //will store the horses who finish the race in the order in which the finish
+        // Will store the horses who finish the race in the order in which the finish
         this.state = {
             horsesArray: []
-        }
+        };
+
         this.addFinishedHorse = this.addFinishedHorse.bind(this);
         this.resetWinner = this.resetWinner.bind(this);
     }
 
-    //As soon as a horse completes the race, it is added to the horse list
-    addFinishedHorse(horse: string){
-        this.setState({horsesArray: this.state.horsesArray.concat(horse)});
+    // As soon as a horse completes the race, it is added to the horse list
+    addFinishedHorse(horse: string) {
+        this.setState({ horsesArray: this.state.horsesArray.concat(horse) });
     }
 
-    //remove all those horses that were declared as completed race
-    resetWinner(){
-        this.setState({horsesArray: []});
+    // Remove all those horses that were declared as completed race
+    resetWinner() {
+        this.setState({ horsesArray: [] });
     }
 
     render() {
-        //If the game is restarted
-        if(!this.props.startGame && this.state.horsesArray.length > 0){
+        // If the game is restarted
+        if (!this.props.startGame && this.state.horsesArray.length > 0) {
             this.resetWinner();
         }
 
         return (
-            //Calling the hourse object
-             <div className = 'main-div'>
-                <div className = 'Winner-div'>
+            // Calling the hourse object
+            <div className="main-div">
+                <div className="Winner-div">
                     <label>
-                       Winner:
+                        Winner:
                     </label>
-                    <label className = 'WinnerLabel' >
-                    {this.state.horsesArray[0]}
+                    <label className="WinnerLabel">
+                        {this.state.horsesArray[0]}
                     </label>
-                </div>                
-                <div className = 'ListDiv'>
-                    {this.props.allHorses.map( (horse: horseDetails, key: number) => 
-                        <Horse 
-                          avatarUrl = {horse['avatarUrl']}
-                          username = {horse['name']}
-                          startGame = {this.props.startGame}
-                          addFinishedHorse  = {this.addFinishedHorse }
-                          key = {key}
-                    />
+                </div>
+                <div className="ListDiv">
+                    {this.props.allHorses.map((horse: HorseDetails, key: number) =>
+                        <Horse
+                            avatarUrl={horse.avatarUrl}
+                            username={horse.name}
+                            startGame={this.props.startGame}
+                            addFinishedHorse={this.addFinishedHorse}
+                            key={key}
+                        />
                     )}
                 </div>
             </div>

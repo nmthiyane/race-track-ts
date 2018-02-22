@@ -1,7 +1,14 @@
+/**
+ * Author: Ntuthuko Mthiyane
+ * Date: 21/02/2018
+ * Description: This function is responsible for generating the menu where the 
+ * user will start,and reset game and select number of users
+ */
+
 import * as React from 'react';
 import './Menus.css';
-const start_icon  = require('../../images/start_icon.png'); 
-const reset_icon = require('../../images/reset_icon.png');
+const startIcon  = require('../../images/start_icon.png'); 
+const resetIcon = require('../../images/reset_icon.png');
 
 interface Props {
     onPopulate: Function;
@@ -12,8 +19,8 @@ interface State {
     sampleStateProp?: string; 
 }
 
-export class Menus extends React.Component<Props, State>{
-    constructor(props: Props){
+export class Menus extends React.Component<Props, State> {
+    constructor(props: Props) {
         super(props);
 
         this.handleText = this.handleText.bind(this);
@@ -21,51 +28,52 @@ export class Menus extends React.Component<Props, State>{
         this.handleResetGame = this.handleResetGame.bind(this);
     }
 
-    // change from any tp proper thing
-    handleText(event: any){
-        const value = event.target.value;
-        //Pass noOfHorses to parent
-        if(value === ""){
-            //Reset to default
+    // Change from any to proper thing
+    handleText(event: any) {
+        const value: number | string = event.target.value;
+        // Pass noOfHorses to parent
+        if (value === '') {
+            // Reset to default
             this.props.onPopulate(2);
-        }
-        else if(value < 2 || value > 9) {
+
+        } else if (value < 2 || value > 9) {
             alert('Number of horses must from 2 - 9');
-        }
-        else {
+
+        } else {
             this.props.onPopulate(value);
         }
     }
 
-    handleStartGame(){
+    handleStartGame() {
         this.props.onStart(true);
     }
 
-    handleResetGame(){
+    handleResetGame() {
         this.props.onStart(false);
         this.props.onPopulate(2);
     }
     
-    render(){
+    render() {
         return (
-            <div className = 'main-menu'>
-                <div className = 'menu-text'>
+            <div className="main-menu">
+                <div className="menu-text">
                     <p> Enter No. of horses </p>
-                    {/* <input 
-                        type = 'text' 
-                        maxLength="10"
-                        onChange = {this.handleText}
-                        placeholder = "2=< horses =<9" required
-                    /> */}
-                    <img className = 'StartButton'
-                        src = {start_icon}
-                        alt = 'Start icon'
-                        onClick = {this.handleStartGame}
+                    <input 
+                        type="text" 
+                        onChange={this.handleText}
+                        placeholder="2=< horses =<9"
                     />
-                    <img className = 'ResetButton'
-                        src = {reset_icon}
-                        alt = 'Reset Button'
-                        onClick = {this.handleResetGame}
+                    <img 
+                        className="StartButton"
+                        src={startIcon}
+                        alt="Start icon"
+                        onClick={this.handleStartGame}
+                    />
+                    <img 
+                        className="ResetButton"
+                        src={resetIcon}
+                        alt="Reset Button"
+                        onClick={this.handleResetGame}
                     />
                 </div> 
             </div>   

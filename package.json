@@ -19,5 +19,17 @@
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "typescript": "^2.7.2"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). And uses the following repo to enable [Typescript](https://github.com/wmonk/create-react-app-typescript).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmthiyane/my-react-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmthiyane/my-react-ts/issues"
+  },
+  "homepage": "https://github.com/nmthiyane/my-react-ts#readme"
 }

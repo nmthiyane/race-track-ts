@@ -18,7 +18,7 @@ interface State {
     isFinish?: boolean;
 }
 
-export class Horse extends React.Component<Props, State>  {
+export class Horse extends React.Component<Props, State> {
     timeInterval: NodeJS.Timer;
     constructor(props: Props) {
         super(props);
@@ -26,9 +26,8 @@ export class Horse extends React.Component<Props, State>  {
         this.state = {
             progress: 0,
             isFinish: false
-        }
+        };
 
-        //timeInterval = 0;
         this.startTimer = this.startTimer.bind(this);
         this.stopTimer = this.stopTimer.bind(this);
         this.addToFinish = this.addToFinish.bind(this);
@@ -36,21 +35,21 @@ export class Horse extends React.Component<Props, State>  {
         this.handleRestart = this.handleRestart.bind(this);
     }
 
-    //This function will generate a random increment to each horse progress
+    // This function will generate a random increment to each horse progress
     incrementProgress() {
         let {progress} = this.state;
         let {startGame} = this.props;
 
         if (progress < 100 && startGame) {
-            let randomInceament = Math.floor(Math.random()*5) + 1;
+            let randomInceament = Math.floor(Math.random() * 5) + 1;
             this.setState({ progress: progress + randomInceament});
-        };
+        }
     }
 
-    stopTimer(){
+    stopTimer() {
         let {progress} = this.state;
-        //once the progress reaches 100%, than stop the time interval
-        if(progress >= 100){
+        // Once the progress reaches 100%, than stop the time interval
+        if (progress >= 100) {
             clearInterval(this.timeInterval);
         }
     }
@@ -59,19 +58,19 @@ export class Horse extends React.Component<Props, State>  {
         let {progress} = this.state;
         let {startGame} = this.props;
 
-        //If this is the start of the race, start the interval
-        if(progress === 0 && startGame){
+        // If this is the start of the race, start the interval
+        if (progress === 0 && startGame) {
             this.timeInterval = setInterval(this.incrementProgress, 200);
         }
     }
 
-    //alert the parent that the horse has completed the race
+    // Alert the parent that the horse has completed the race
     addToFinish(username: string) {
         this.setState({isFinish: true });
         this.props.addFinishedHorse(username);
     }
 
-    //Update the state when the game is restarted
+    // Update the state when the game is restarted
     handleRestart() {
         this.setState({ progress: 0 });
         this.setState({ isFinish: false });
@@ -81,30 +80,30 @@ export class Horse extends React.Component<Props, State>  {
         let { startGame, username } = this.props;
         let { progress, isFinish } = this.state;
 
-        //If start is clicked for the first time
+        // If start is clicked for the first time
         if (startGame && progress === 0) {
             this.startTimer();
-        }
-        //once the horse completes the horse, declare as finish and alert the parent
-        else if (progress >= 100 && !isFinish) {
+
+        } else if (progress >= 100 && !isFinish) { 
+            // Once the horse completes the horse, declare as finish and alert the parent
             this.stopTimer();
             this.addToFinish(username);
-        }
-        //when game is restarted, changed the progress to 0. 
-        else if (!startGame && progress !== 0) {
+        
+        } else if (!startGame && progress !== 0) {
+            // When game is restarted, changed the progress to 0. 
             this.handleRestart();
         }
 
         return (
-            <div className='HorseDiv'>
-                <h4 className='Horse Name'>
+            <div className="HorseDiv">
+                <h4 className="Horse Name">
                     {this.props.username}
                 </h4>
                 <img
                     src={this.props.avatarUrl}
-                    alt='Horse avatar'
+                    alt="Horse avatar"
                 />
-                <progress value={this.state.progress} max="100"></progress>
+                <progress value={this.state.progress} max="100"> {this.props.username}</progress>
             </div>
         );
     }
