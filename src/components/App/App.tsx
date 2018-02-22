@@ -8,7 +8,6 @@ import * as React from 'react';
 import { Menus, HorseList } from '../';
 import { RandomHorses } from '../../Utilities';
 import './App.css';
-
 const logo = require('../../images/horse.png');
 
 // interface with the propperties of each horse

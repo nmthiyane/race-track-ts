@@ -2,7 +2,7 @@
     display: block;
     border: 2px solid #014373;
     padding: 10px;
-    margin: -5px;
+    margin: 30px;
     height: 100px;
 }
 
@@ -40,5 +40,4 @@ input{
 .main-menu {
     height: 200px;
     width: 100%;
-
 }
