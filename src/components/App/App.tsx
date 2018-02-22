@@ -1,15 +1,15 @@
 /**
  * Author: Ntuthuko Mthiyane
  * Date: 21/02/2018
- * Description: This compo
+ * Description: This is the main component
  */
 
 import * as React from 'react';
+import { Menus, HorseList } from '../';
+import { RandomHorses } from '../../Utilities';
 import './App.css';
+
 const logo = require('../../images/horse.png');
-const Menus = require('../Menus');
-const HorseList = require('../HorseList');
-const RandomHorses = require('../../Utilities/RandomHorses.js');
 
 // interface with the propperties of each horse
 interface HorseDetails {
@@ -69,7 +69,7 @@ export class App extends React.Component<Props, State> {
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Welcome to Kurtosys Race Track</h1>
                     <h2 className="App-sub-title">Let the best man win</h2>
-                </header>
+                </header>               
                 <div className="Components">
                     <Menus
                         onPopulate={this.populateUsers}

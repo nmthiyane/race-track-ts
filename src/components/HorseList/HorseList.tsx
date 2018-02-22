@@ -4,7 +4,7 @@
  * Description: This component is responsible for creating multiple horse components
  */
 import * as React from 'react';
-const Horse = require('../Horse');
+import { Horse } from '../';
 import './HorseList.css';
 
 // This interface contains the properties of the horse object
@@ -15,6 +15,8 @@ interface HorseDetails {
 
 interface Props {
     startGame: boolean;
+    noOfHorses: number;
+    onStart: Function;
     allHorses: HorseDetails[];
 }
 
@@ -64,7 +66,7 @@ export class HorseList extends React.Component<Props, State> {
                     </label>
                 </div>
                 <div className="ListDiv">
-                    {this.props.allHorses.map((horse: HorseDetails, key: number) =>
+                    {this.props.allHorses.map((horse: HorseDetails, key: number) => (
                         <Horse
                             avatarUrl={horse.avatarUrl}
                             username={horse.name}
@@ -72,7 +74,7 @@ export class HorseList extends React.Component<Props, State> {
                             addFinishedHorse={this.addFinishedHorse}
                             key={key}
                         />
-                    )}
+                    ))}
                 </div>
             </div>
         );
