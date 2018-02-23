@@ -17,20 +17,24 @@ interface Props {
 
 interface State {
     sampleStateProp?: string; 
+    userInput: string | number;
 }
 
 export class Menus extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
 
+        this.state = {
+            userInput: ''
+        };
         this.handleText = this.handleText.bind(this);
         this.handleStartGame = this.handleStartGame.bind(this);
         this.handleResetGame = this.handleResetGame.bind(this);
     }
 
     // Change from any to proper thing
-    handleText(event: any) {
-        const value: number | string = event.target.value;
+    handleText(): void {
+        const value =  this.state.userInput;
         // Pass noOfHorses to parent
         if (value === '') {
             // Reset to default
@@ -60,7 +64,8 @@ export class Menus extends React.Component<Props, State> {
                     <p> Enter No. of horses </p>
                     <input 
                         type="text" 
-                        onChange={this.handleText}
+                        onChange={(event) => (this.setState(({userInput: event.target.value}),  this.handleText))}
+                        value={this.state.userInput}
                         placeholder="2=< horses =<9"
                     />
                     <img 

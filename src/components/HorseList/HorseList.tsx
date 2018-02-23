@@ -6,6 +6,7 @@
 import * as React from 'react';
 import { Horse } from '../';
 import './HorseList.css';
+import { DeclareWinner } from '../../Utilities/DeclareWinner';
 
 // This interface contains the properties of the horse object
 interface HorseDetails {
@@ -25,7 +26,6 @@ interface State {
 }
 
 export class HorseList extends React.Component<Props, State> {
-
     constructor(props: Props) {
         super(props);
 
@@ -41,6 +41,8 @@ export class HorseList extends React.Component<Props, State> {
     // As soon as a horse completes the race, it is added to the horse list
     addFinishedHorse(horse: string) {
         this.setState({ horsesArray: this.state.horsesArray.concat(horse) });
+        DeclareWinner();
+
     }
 
     // Remove all those horses that were declared as completed race
