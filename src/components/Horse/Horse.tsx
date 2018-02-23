@@ -60,7 +60,7 @@ export class Horse extends React.Component<Props, State> {
 
         // If this is the start of the race, start the interval
         if (progress === 0 && startGame) {
-            this.timeInterval = setInterval(this.incrementProgress, 200);
+            this.timeInterval = setInterval(this.incrementProgress, 300);
         }
     }
 

@@ -53,7 +53,9 @@ export class App extends React.Component<Props, State> {
 
     // update number of horses
     populateUsers(noOfHorses: number) {
-        this.setState({ noOfHorses, racingHorses: this.returnRandomHorses(noOfHorses) });
+        if (!this.state.start) {
+            this.setState({ noOfHorses, racingHorses: this.returnRandomHorses(noOfHorses) });
+        }
     }
 
     // Update start game state
